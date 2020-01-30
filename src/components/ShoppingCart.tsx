@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Icon } from 'antd';
+import { Icon, Button } from 'antd';
 import styled from 'styled-components';
 
 const Header = styled.div`
@@ -7,8 +7,9 @@ const Header = styled.div`
 `;
 
 const Buttons = styled.div`
-  diplay: flex;
+  display: flex;
 `;
+
 export default class ShoppingCart extends Component {
   render() {
     const parsedDate: string = new Date().toLocaleString();
@@ -30,7 +31,12 @@ export default class ShoppingCart extends Component {
             <p>{parsedDate}</p>
           </div>
         </Header>
-        <Buttons></Buttons>
+        <Buttons>
+          <Button style={{ flex: '1' }}>시술</Button>
+          <Button type="danger" style={{ flex: '1' }}>
+            할인
+          </Button>
+        </Buttons>
       </div>
     );
   }
