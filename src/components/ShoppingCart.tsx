@@ -10,9 +10,15 @@ const Buttons = styled.div`
   display: flex;
 `;
 
+const CartItems = styled.div`
+  height: 350px;
+  background: #2980b9;
+`;
+
 export default class ShoppingCart extends Component {
   render() {
     const parsedDate: string = new Date().toLocaleString();
+    let totalCost: string = '0원';
     return (
       <div>
         <Header>
@@ -37,6 +43,16 @@ export default class ShoppingCart extends Component {
             할인
           </Button>
         </Buttons>
+        <CartItems></CartItems>
+        <div style={{ height: '30px', fontSize: '1.3rem' }}>
+          <span>합계</span>
+          <span style={{ position: 'absolute', right: '10px' }}>
+            {totalCost}
+          </span>
+        </div>
+        <Button type="primary" block>
+          다음
+        </Button>
       </div>
     );
   }
