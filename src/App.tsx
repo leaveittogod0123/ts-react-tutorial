@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
-import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
+import {
+  Switch,
+  Route,
+  BrowserRouter as Router,
+  withRouter,
+} from 'react-router-dom';
 import ShoppingCart from './components/ShoppingCart';
 import BookBeautySalon from './components/BookBeautySalon';
 import GlobalStyles from './utils/GlobalStyles';
@@ -9,17 +14,13 @@ class App extends Component {
     return (
       <div>
         <GlobalStyles />
-        <Router>
-          <div>
-            <Switch>
-              <Route exact path="/" component={ShoppingCart} />
-              <Route path="/book" component={BookBeautySalon} />
-            </Switch>
-          </div>
-        </Router>
+        <Switch>
+          <Route path="/book" component={BookBeautySalon} />
+          <Route exact path="/" component={ShoppingCart} />
+        </Switch>
       </div>
     );
   }
 }
 
-export default App;
+export default withRouter(App);
