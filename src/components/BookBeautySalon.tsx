@@ -6,9 +6,7 @@ const Header = styled.div`
   text-align: center;
 `;
 
-const Content = styled.div`
-  display: flex;
-`;
+const Content = styled.div``;
 
 export default class BookBeautySalon extends Component {
   render() {
@@ -40,8 +38,24 @@ export default class BookBeautySalon extends Component {
           </div>
         </Header>
         <Content>
-          <span style={{ justifyContent: 'flex-start' }}>커트</span>
-          <span style={{ justifyContent: 'flex-end' }}>바버,헤어</span>
+          <span
+            style={{
+              display: 'inline-block',
+              position: 'absolute',
+              left: '10px',
+            }}
+          >
+            커트
+          </span>
+          <span
+            style={{
+              display: 'inline-block',
+              position: 'absolute',
+              right: '10px',
+            }}
+          >
+            바버,헤어
+          </span>
         </Content>
       </div>
     );
