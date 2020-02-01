@@ -1,5 +1,5 @@
 import React from 'react';
-import { BeautySalonProps } from '../utils/d';
+import { BeautySalonProps } from '../modules/shoppingcarts';
 
 export default function Item({ title, cost, time }: BeautySalonProps) {
   return (
